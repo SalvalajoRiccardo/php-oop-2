@@ -36,7 +36,7 @@ class Product {
 
     // prendere il numero di prodotti da comprare
     public function setBuy($num){
-        $num = $this->toBuy;
+        $this->toBuy = $num;
     }
     // stampare il numero di prodotti da comprare
     public function getBuy(){
