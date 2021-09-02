@@ -4,7 +4,11 @@ require_once 'Specprod.php';
 
 
 $prodotto1 = new Product ('aspirapolvere','elettrodomestico',200,3);
-$prodotto1->setBuy(1);
+try {
+    $prodotto1->setBuy(5);
+} catch (Exception $e) {
+    echo 'Errore: ' . $e->getMessage();
+}
 $prodotto1->setPosition('sede-1');
 
 $prodotto2 = new Product ('coca-cola','alimentare',2,500);
@@ -34,7 +38,7 @@ $prodotto4->setPosition('sede-2');
         <h3><?php echo 'Nome prodotto: ' . $prodotto1->getName() ?></h3>
         <span><?php echo 'tipo: ' . $prodotto1->getType() . ' ' . 'Prezzo: ' . $prodotto1->getPrice() . '$' ?> </span>
         <h5><?php echo 'In Stock: ' . $prodotto1->getStock() ?></h5>
-        <h5><?php echo 'Da Comprare: ' . $prodotto1->getBuy() ?></h5>
+        <h5><?php echo 'Da Comprare: ' . $prodotto1->getBuy()  ?></h5>
         <span><?php echo 'Posizione Fisica: ' . $prodotto1->getPosition() ?></span>
         <br>
     

@@ -37,7 +37,13 @@ class Product {
 
     // prendere il numero di prodotti da comprare
     public function setBuy($num){
-        $this->toBuy = $num;
+        if($num <= $this->stock && is_numeric($num) ){
+            $this->toBuy = $num;
+        } elseif (!is_numeric($num)){
+            throw new Exception('Non è un numero');
+        } else {
+            throw new Exception('Out Of Stock');
+        }
     }
     // stampare il numero di prodotti da comprare
     public function getBuy(){
