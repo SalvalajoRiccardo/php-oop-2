@@ -1,5 +1,5 @@
 <?php
-
+require_once 'Posizione.php';
 /**
  * classe genitore
  */
@@ -10,6 +10,7 @@ class Product {
     protected $type;
     protected $stock;
     protected $toBuy;
+    use Position;
 
     function __construct($_name, $_type, $_price, $_stock){
         $this->name = $_name;
